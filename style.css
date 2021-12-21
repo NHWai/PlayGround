@@ -16,7 +16,7 @@ body {
   margin: 0 auto;
 }
 
-.btn {
+button {
   font-size: 16px;
   padding: 20px 60px 20px;
   border-radius: 50px;
@@ -25,7 +25,7 @@ body {
   cursor: pointer;
 }
 
-.btn:active {
+button:active {
   transform: scale(0.98);
 }
 
@@ -57,16 +57,39 @@ body {
   margin-bottom: 20px;
 }
 
+.btn {
+  /* position: fixed;
+  bottom: 27%;
+  left: 50%;
+  transform: translateX(-50%); */
+  transition: all 0.8s ease-in-out;
+}
+
 .btn.scroll {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  /* bottom: 15px;
+  right: 15px; */
+  /* transform: translateX(100%); */
+  transform: translate(525px, 120px);
+  /* transform: translate(850%, 180%); */
   background-color: steelblue;
   color: #fff;
-  width: 0.8px;
+  padding: 16px;
   border-radius: 50%;
 }
 
+/* .btn:active,
+.btn.scroll:active {
+  transform: scale(0.98);
+} */
+
+.btn.scroll i {
+  font-size: 32px;
+}
+
+.hidden {
+  display: none;
+}
 /* Navbar */
 
 #navbar {
@@ -156,7 +179,7 @@ body {
 
 @media (max-width: 600px) {
   .modal {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -227,5 +250,24 @@ body {
 
   .setting.open .line2 {
     transform: rotate(765deg) translateY(-5.5px);
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  .btnBreak {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+
+    background-color: steelblue;
+    color: #fff;
+    padding: 16px;
+    border-radius: 50%;
+  }
+
+  .btnBreak i {
+    font-size: 32px;
   }
 }
