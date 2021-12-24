@@ -9,10 +9,17 @@ const line2 = document.querySelector(".line2");
 const btn = document.querySelector(".btn");
 const btnBreak = document.querySelector(".btnBreak");
 const x = window.matchMedia("(max-width: 600px)");
+const x1 = window.matchMedia("(max-width: 1200px)");
+const width = window.innerWidth - 15;
+const height = window.innerHeight - 15;
 
 //Window Changes
-myFunction(x);
-x.addListener(myFunction);
+//breakpointUnder600px
+frameWidthUndersix(x);
+x.addListener(frameWidthUndersix);
+//breakpointUnder1200px
+frameWidthUnderTwl(x1);
+x1.addListener(frameWidthUnderTwl);
 
 //NavEl color changes
 navEl.forEach((e) =>
@@ -52,15 +59,25 @@ setBtn.addEventListener("click", function () {
   setBtn.classList.toggle("open");
 });
 
-function myFunction(x) {
+function frameWidthUndersix(x) {
   if (x.matches) {
     setBtn.classList.remove("hidden");
     navLinks.classList.add("hidden");
-    btn.classList.add("hidden");
-    btnBreak.classList.remove("hidden");
+    // btn.classList.add("hidden");
+    // btnBreak.classList.remove("hidden");
   } else {
     setBtn.classList.add("hidden");
     navLinks.classList.remove("hidden");
+    // btn.classList.remove("hidden");
+    // btnBreak.classList.add("hidden");
+  }
+}
+
+function frameWidthUnderTwl(x1) {
+  if (x1.matches) {
+    btn.classList.add("hidden");
+    btnBreak.classList.remove("hidden");
+  } else {
     btn.classList.remove("hidden");
     btnBreak.classList.add("hidden");
   }
