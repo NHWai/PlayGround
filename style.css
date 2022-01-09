@@ -17,6 +17,10 @@ body {
   margin: 0 auto;
 }
 
+.margin-bt-la {
+  margin-bottom: 60px;
+}
+
 button {
   font-size: 16px;
   padding: 20px 60px 20px;
@@ -120,6 +124,7 @@ button:active {
   text-decoration: none;
   padding: 0 15px 0;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 #navbar.active {
@@ -150,21 +155,27 @@ button:active {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
 }
 
 #services h1 {
   font-size: 46px;
-  margin: 20px 0 30px;
+  margin: 0 0 30px;
 }
 
 #services .items {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+  grid-template-areas:
+    "item1 item2 item3"
+    "item4 item5 item6";
 }
 
-#services .itemContainer {
+.serviceItemContainer {
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -173,19 +184,43 @@ button:active {
   margin: 0 30px 20px;
 }
 
-#services img {
+.serviceItemContainer--img {
   max-width: 170px;
   height: 110px;
 }
 
-#services .bold {
+.bold {
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-#services p {
+.description {
   line-height: 1.5;
+}
+
+.item1 {
+  grid-area: item1;
+}
+
+.item2 {
+  grid-area: item2;
+}
+
+.item3 {
+  grid-area: item3;
+}
+
+.item4 {
+  grid-area: item4;
+}
+
+.item5 {
+  grid-area: item5;
+}
+
+.item6 {
+  grid-area: item6;
 }
 
 /* Clients */
@@ -194,7 +229,6 @@ button:active {
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 100vh;
 }
 
 #clients h1 {
@@ -204,17 +238,23 @@ button:active {
 
 #clients p {
   font-size: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 #clients .itemContainer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   align-items: center;
   justify-items: center;
-  /* width: 1200px; */
   gap: 10px;
+  grid-template-areas:
+    ". . el4 . ."
+    ". el2 el4 el7 ."
+    "el1 el2 el5 el7 el9"
+    "el1 el3 el5 el8 el9"
+    ". el3 el6 el8 ."
+    ". . el6 . .";
 }
 
 .el img {
@@ -235,67 +275,39 @@ button:active {
 }
 
 .el1 {
-  grid-row: 1/4;
-}
-
-.combo23 {
-  display: flex;
-  flex-direction: column;
-  /* align-items: stretch; */
-  grid-row: 1/4;
-  grid-column: 2/3;
+  grid-area: el1;
 }
 
 .el2 {
-  margin-bottom: 10px;
+  grid-area: el2;
 }
-
-.combo78 {
-  display: flex;
-  flex-direction: column;
-  /* align-items: stretch; */
-  grid-row: 1/4;
-  grid-column: 4/5;
-}
-
-.el7 {
-  margin-bottom: 10px;
-}
-/*
 
 .el3 {
-  grid-row: 3/4;
-  grid-column: 2/3;
-} */
+  grid-area: el3;
+}
 
 .el4 {
-  grid-row: 1/2;
-  grid-column: 3/4;
+  grid-area: el4;
 }
 
 .el5 {
-  grid-row: 2/3;
-  grid-column: 3/4;
+  grid-area: el5;
 }
 
 .el6 {
-  grid-row: 3/4;
-  grid-column: 3/4;
+  grid-area: el6;
 }
 
-/* .el7 {
-  grid-row: 1/3;
-  grid-column: 4/5;
+.el7 {
+  grid-area: el7;
 }
 
 .el8 {
-  grid-row: 3/4;
-  grid-column: 4/5;
-} */
+  grid-area: el8;
+}
 
 .el9 {
-  grid-row: 1/4;
-  grid-column: 5/6;
+  grid-area: el9;
 }
 
 /* Contacts */
@@ -375,6 +387,7 @@ button:active {
     text-decoration: none;
     padding: 30px 0;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
   }
 
   .modal a:hover,
@@ -408,7 +421,7 @@ button:active {
     position: absolute;
     top: 10px;
     left: 5px;
-    transition: transform 0.6s linear;
+    transition: transform 0.3s linear;
   }
 
   .setting .line2 {
@@ -417,10 +430,51 @@ button:active {
   }
 
   .setting.open .line1 {
-    transform: rotate(-765deg) translateY(5.5px);
+    transform: rotate(-405deg) translateY(5.5px);
   }
 
   .setting.open .line2 {
-    transform: rotate(765deg) translateY(-5.5px);
+    transform: rotate(405deg) translateY(-5.5px);
+  }
+
+  #clients .itemContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #clients .itemContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "el4"
+      "el5"
+      "el6";
+  }
+
+  .el1,
+  .el2,
+  .el3,
+  .el7,
+  .el8,
+  .el9 {
+    display: none;
+  }
+
+  #services .items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "item1 item2 item3"
+      "item4 item5 item6";
+  }
+
+  .serviceItemContainer {
+    width: 100px;
+  }
+
+  .description {
+    display: none;
   }
 }

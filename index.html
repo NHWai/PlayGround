@@ -21,9 +21,9 @@
 
         <ul class="navLinks">
           <li><a href="#hero" class="navEl current">Home</a></li>
-          <li><a href="#services" class="navEl">Services</a></li>
-          <li><a href="#clients" class="navEl">Clients</a></li>
-          <li><a href="#projects" class="navEl">Projects</a></li>
+          <li><a class="service-nav navEl">Services</a></li>
+          <li><a class="client-nav navEl">Clients</a></li>
+          <li><a class="project-nav navEl">Projects</a></li>
           <li><a href="#contacts" class="navEl">Contacts</a></li>
         </ul>
 
@@ -36,13 +36,13 @@
 
     <div class="modal hidden">
       <a href="#hero" class="navEl current">Home</a>
-      <a href="#services" class="navEl">Services</a>
-      <a href="#clients" class="navEl">Clients</a>
-      <a href="#projects" class="navEl">Projects</a>
+      <a class="service-nav navEl">Services</a>
+      <a class="client-nav navEl">Clients</a>
+      <a class="project-nav navEl">Projects</a>
       <a href="#contacts" class="navEl">Contacts</a>
     </div>
 
-    <div id="hero">
+    <div id="hero" class="margin-bt-la">
       <div class="container">
         <h1>Heading</h1>
         <p>
@@ -56,66 +56,54 @@
       </div>
     </div>
 
-    <div id="services">
+    <div id="services" class="margin-bt-la">
       <div class="container">
         <h1>Services We Provide</h1>
         <div class="items">
-          <div class="itemContainer">
-            <img
-              src="https://designmodo.com/wp-content/uploads/2015/09/webview.gif"
-            />
+          <div class="serviceItemContainer item1">
+            <img class="serviceItemContainer--img" src="gif/item1.gif" />
             <p class="bold">UI/UX</p>
-            <p>
+            <p class="description">
               Landing Pages, User Flow, Wireframing, Prototyping, Mobile App
               Design, Web App
             </p>
           </div>
-          <div class="itemContainer">
-            <img
-              src="https://animated-gif-creator.com/images/01/how-to-create-a-simple-icon-animation-in-after-effects_73.gif"
-            />
+          <div class="serviceItemContainer item2">
+            <img class="serviceItemContainer--img" src="gif/item2.jpg" />
             <p class="bold">Icon/Illustration</p>
-            <p>
+            <p class="description">
               Landing Pages, User Flow, Wireframing, Prototyping, Mobile App
               Design, Web App
             </p>
           </div>
-          <div class="itemContainer">
-            <img
-              src="https://i.pinimg.com/originals/dd/53/7e/dd537eb222f1ba7863327b69c20e0935.gif"
-            />
+          <div class="serviceItemContainer item3">
+            <img class="serviceItemContainer--img" src="gif/item3.gif" />
             <p class="bold">Branding</p>
-            <p>
+            <p class="description">
               Landing Pages, User Flow, Wireframing, Prototyping, Mobile App
               Design, Web App
             </p>
           </div>
-          <div class="itemContainer">
-            <img
-              src="https://i.pinimg.com/originals/eb/75/3e/eb753ea8f93bca3cf69e60fb5c4f1194.gif"
-            />
+          <div class="serviceItemContainer item4">
+            <img class="serviceItemContainer--img" src="gif/item4.gif" />
             <p class="bold">Development</p>
-            <p>
+            <p class="description">
               Landing Pages, User Flow, Wireframing, Prototyping, Mobile App
               Design, Web App
             </p>
           </div>
-          <div class="itemContainer">
-            <img
-              src="https://designmodo.com/wp-content/uploads/2015/09/contacts.gif"
-            />
+          <div class="serviceItemContainer item5">
+            <img class="serviceItemContainer--img" src="gif/item5.gif" />
             <p class="bold">Motion</p>
-            <p>
+            <p class="description">
               Landing Pages, User Flow, Wireframing, Prototyping, Mobile App
               Design, Web App
             </p>
           </div>
-          <div class="itemContainer">
-            <img
-              src="https://i.pinimg.com/originals/57/12/d6/5712d6671f38f26b33938e03bd374d92.gif"
-            />
+          <div class="serviceItemContainer item6">
+            <img class="serviceItemContainer--img" src="gif/item6.gif" />
             <p class="bold">Photography</p>
-            <p>
+            <p class="description">
               Landing Pages, User Flow, Wireframing, Prototyping, Mobile App
               Design, Web App
             </p>
@@ -124,7 +112,7 @@
       </div>
     </div>
 
-    <div id="clients">
+    <div id="clients" class="margin-bt-la">
       <div class="container">
         <h1>Clients</h1>
         <p>We've been working with teams around the world.</p>
@@ -133,14 +121,13 @@
             <div class="el el1">
               <img src="https://paperpillar.com/assets/images/hoopsai.png" />
             </div>
-            <div class="combo23">
-              <div class="el el2">
-                <img src="	https://paperpillar.com/assets/images/agoda.png" />
-              </div>
 
-              <div class="el el3">
-                <img src="https://paperpillar.com/assets/images/getsafe.png" />
-              </div>
+            <div class="el el2">
+              <img src="	https://paperpillar.com/assets/images/agoda.png" />
+            </div>
+
+            <div class="el el3">
+              <img src="https://paperpillar.com/assets/images/getsafe.png" />
             </div>
 
             <div class="el el4">
@@ -148,33 +135,19 @@
             </div>
 
             <div class="el el5">
-              <img
-                class="el5"
-                src="https://paperpillar.com/assets/images/crisp.png"
-              />
+              <img src="https://paperpillar.com/assets/images/crisp.png" />
             </div>
 
             <div class="el el6">
-              <img
-                class="el6"
-                src="https://paperpillar.com/assets/images/anyleads.png"
-              />
+              <img src="https://paperpillar.com/assets/images/anyleads.png" />
             </div>
 
-            <div class="combo78">
-              <div class="el el7">
-                <img
-                  class="el7"
-                  src="	https://paperpillar.com/assets/images/teachable.png"
-                />
-              </div>
+            <div class="el el7">
+              <img src="	https://paperpillar.com/assets/images/teachable.png" />
+            </div>
 
-              <div class="el el8">
-                <img
-                  class="el8"
-                  src="https://paperpillar.com/assets/images/flyr.png"
-                />
-              </div>
+            <div class="el el8">
+              <img src="https://paperpillar.com/assets/images/flyr.png" />
             </div>
 
             <div class="el el9">
@@ -185,7 +158,7 @@
       </div>
     </div>
 
-    <div id="projects">
+    <div id="projects" class="margin-bt-la">
       <div class="container">
         <h1>Projects</h1>
         <div>Project-1</div>

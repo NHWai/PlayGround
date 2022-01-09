@@ -1,6 +1,12 @@
 "use strict";
 const nav = document.getElementById("navbar");
 const navEl = document.querySelectorAll(".navEl");
+const serNav = document.querySelectorAll(".service-nav");
+const cliNav = document.querySelectorAll(".client-nav");
+const proNav = document.querySelectorAll(".project-nav");
+const services = document.getElementById("services");
+const clients = document.getElementById("clients");
+const projects = document.getElementById("projects");
 const setBtn = document.querySelector(".setting");
 const navLinks = document.querySelector(".navLinks");
 const modal = document.querySelector(".modal");
@@ -12,6 +18,26 @@ const x = window.matchMedia("(max-width: 600px)");
 const x1 = window.matchMedia("(max-width: 1200px)");
 const width = window.innerWidth - 15;
 const height = window.innerHeight - 15;
+
+navClick(serNav, services);
+navClick(cliNav, clients);
+navClick(proNav, projects);
+
+function navClick(navEl, link) {
+  navEl.forEach((e) => {
+    e.addEventListener("click", () => {
+      getCoords(link);
+    });
+  });
+}
+
+function getCoords(el) {
+  const coord = el.getBoundingClientRect();
+  window.scrollTo(
+    coord.left + window.pageXOffset,
+    coord.top + window.pageYOffset - 70
+  );
+}
 
 //Window Changes
 //breakpointUnder600px
@@ -59,17 +85,22 @@ setBtn.addEventListener("click", function () {
   setBtn.classList.toggle("open");
 });
 
+navEl.forEach((el) => {
+  el.addEventListener("click", () => {
+    modal.classList.add("hidden");
+    setBtn.classList.toggle("open");
+  });
+});
+
 function frameWidthUndersix(x) {
   if (x.matches) {
     setBtn.classList.remove("hidden");
+    setBtn.classList.remove("open");
     navLinks.classList.add("hidden");
-    // btn.classList.add("hidden");
-    // btnBreak.classList.remove("hidden");
+    modal.classList.add("hidden");
   } else {
     setBtn.classList.add("hidden");
     navLinks.classList.remove("hidden");
-    // btn.classList.remove("hidden");
-    // btnBreak.classList.add("hidden");
   }
 }
 
