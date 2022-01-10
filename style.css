@@ -180,7 +180,7 @@ button:active {
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  width: 300px;
+  max-width: 300px;
   margin: 0 30px 20px;
 }
 
@@ -463,11 +463,12 @@ button:active {
 
   #services .items {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
-      "item1 item2 item3"
-      "item4 item5 item6";
+      "item1 item2"
+      "item3 item4"
+      "item5 item6";
   }
 
   .serviceItemContainer {
